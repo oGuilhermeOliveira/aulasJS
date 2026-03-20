@@ -1,20 +1,12 @@
-const express = require ("express")
-const app = express()
+const express = require("express");
+const app = express();
 
-app.get("/:nome", (req, res) => {
-    const { nome } = req.params;
-    res.status(200).json({
-      mensagem: `Hello ${nome}!`
-    });
+
+app.get("/", (req, res) => {
+  res.send("Olá Troquei de brach");
 });
 
-app.get("/idade/:nome/:idade", (req, res) => {
-    const { nome, idade } = req.params;
-    res.status(200).json({
-      mensagem: `Nome: ${nome}, idade: ${idade}!`
-    });
-  });
-  
-app.listen(3004, (res)=> {
-    console.log('Ryan server está on');
+
+app.listen(3005, () => {
+  console.log("Servidor on");
 });
